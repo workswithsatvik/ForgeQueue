@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forgequeue"
+version = "0.1.0"
+description = "A durable PostgreSQL background job queue with fenced leases"
+requires-python = ">=3.11"
+dependencies = ["psycopg[binary]==3.3.5"]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[project.scripts]
+forgequeue = "forgequeue.cli:main"
+
+[tool.setuptools.package-data]
+forgequeue = ["*.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
