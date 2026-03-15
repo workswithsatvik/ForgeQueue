@@ -1,0 +1,526 @@
+{
+  "measured_at": "2026-09-05T08:37:27.232726+00:00",
+  "targets": {
+    "one_worker_jobs_per_second": 95,
+    "eight_worker_jobs_per_second": 610,
+    "speedup": 6.4,
+    "crash_jobs_minimum": 50000,
+    "recovery_seconds_maximum": 6,
+    "reclaimed_percent": 100,
+    "duplicate_committed_effects": 0
+  },
+  "environment": {
+    "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "cpu": "arm",
+    "cpu_count": 10,
+    "python": "3.14.7",
+    "postgresql": {
+      "server_version": "16.15 (Homebrew)",
+      "fsync": "on",
+      "synchronous_commit": "on",
+      "full_page_writes": "on",
+      "shared_buffers": "128MB"
+    }
+  },
+  "workload": {
+    "simulated_io_ms": 7,
+    "claim_batch": 1,
+    "effect": "one PostgreSQL insert atomically committed with acknowledgement",
+    "includes": "claim, handler delay, effect, acknowledgement, audit events",
+    "excludes": "enqueue, schema setup, process startup"
+  },
+  "throughput": [
+    {
+      "workers": 1,
+      "jobs": 2000,
+      "seconds": 20.3271650839597,
+      "jobs_per_second": 98.39050313898485,
+      "per_worker": [
+        {
+          "done": 2000,
+          "elapsed": 20.326482167001814
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 1
+    },
+    {
+      "workers": 2,
+      "jobs": 2000,
+      "seconds": 10.030498957959935,
+      "jobs_per_second": 199.3918755569835,
+      "per_worker": [
+        {
+          "done": 1000,
+          "elapsed": 10.019878957886249
+        },
+        {
+          "done": 1000,
+          "elapsed": 10.029840708011761
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 1
+    },
+    {
+      "workers": 4,
+      "jobs": 2000,
+      "seconds": 5.045451416866854,
+      "jobs_per_second": 396.39664219420206,
+      "per_worker": [
+        {
+          "done": 499,
+          "elapsed": 5.037579667055979
+        },
+        {
+          "done": 501,
+          "elapsed": 5.037607375066727
+        },
+        {
+          "done": 499,
+          "elapsed": 5.044213458895683
+        },
+        {
+          "done": 501,
+          "elapsed": 5.044907083036378
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 1
+    },
+    {
+      "workers": 8,
+      "jobs": 2000,
+      "seconds": 2.547105957986787,
+      "jobs_per_second": 785.204868972465,
+      "per_worker": [
+        {
+          "done": 249,
+          "elapsed": 2.5298757920973003
+        },
+        {
+          "done": 249,
+          "elapsed": 2.5402237907983363
+        },
+        {
+          "done": 253,
+          "elapsed": 2.540152625180781
+        },
+        {
+          "done": 250,
+          "elapsed": 2.540264999959618
+        },
+        {
+          "done": 251,
+          "elapsed": 2.5403120000846684
+        },
+        {
+          "done": 249,
+          "elapsed": 2.540525959106162
+        },
+        {
+          "done": 249,
+          "elapsed": 2.5405504999216646
+        },
+        {
+          "done": 250,
+          "elapsed": 2.540812499821186
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 1
+    },
+    {
+      "workers": 1,
+      "jobs": 2000,
+      "seconds": 20.264736958080903,
+      "jobs_per_second": 98.69360772543689,
+      "per_worker": [
+        {
+          "done": 2000,
+          "elapsed": 20.26415754109621
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 2
+    },
+    {
+      "workers": 2,
+      "jobs": 2000,
+      "seconds": 9.994940666947514,
+      "jobs_per_second": 200.1012378806653,
+      "per_worker": [
+        {
+          "done": 1001,
+          "elapsed": 9.993224707897753
+        },
+        {
+          "done": 999,
+          "elapsed": 9.99328454118222
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 2
+    },
+    {
+      "workers": 4,
+      "jobs": 2000,
+      "seconds": 5.155292124953121,
+      "jobs_per_second": 387.9508573955325,
+      "per_worker": [
+        {
+          "done": 499,
+          "elapsed": 5.14405049989
+        },
+        {
+          "done": 500,
+          "elapsed": 5.152706624940038
+        },
+        {
+          "done": 501,
+          "elapsed": 5.153813792159781
+        },
+        {
+          "done": 500,
+          "elapsed": 5.154220332857221
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 2
+    },
+    {
+      "workers": 8,
+      "jobs": 2000,
+      "seconds": 2.587866249959916,
+      "jobs_per_second": 772.8374679452536,
+      "per_worker": [
+        {
+          "done": 249,
+          "elapsed": 2.5682447080034763
+        },
+        {
+          "done": 252,
+          "elapsed": 2.568709790939465
+        },
+        {
+          "done": 251,
+          "elapsed": 2.5688324999064207
+        },
+        {
+          "done": 249,
+          "elapsed": 2.5724663748405874
+        },
+        {
+          "done": 249,
+          "elapsed": 2.573466832982376
+        },
+        {
+          "done": 249,
+          "elapsed": 2.5730625418946147
+        },
+        {
+          "done": 252,
+          "elapsed": 2.586206540931016
+        },
+        {
+          "done": 249,
+          "elapsed": 2.5871519171632826
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 2
+    },
+    {
+      "workers": 1,
+      "jobs": 2000,
+      "seconds": 20.57607674994506,
+      "jobs_per_second": 97.20025952009244,
+      "per_worker": [
+        {
+          "done": 2000,
+          "elapsed": 20.574426959035918
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 3
+    },
+    {
+      "workers": 2,
+      "jobs": 2000,
+      "seconds": 10.452297124778852,
+      "jobs_per_second": 191.34549813539823,
+      "per_worker": [
+        {
+          "done": 999,
+          "elapsed": 10.442354375030845
+        },
+        {
+          "done": 1001,
+          "elapsed": 10.451478916918859
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 3
+    },
+    {
+      "workers": 4,
+      "jobs": 2000,
+      "seconds": 5.216864041984081,
+      "jobs_per_second": 383.37207638621123,
+      "per_worker": [
+        {
+          "done": 500,
+          "elapsed": 5.213437540922314
+        },
+        {
+          "done": 500,
+          "elapsed": 5.213472458068281
+        },
+        {
+          "done": 501,
+          "elapsed": 5.213480124948546
+        },
+        {
+          "done": 499,
+          "elapsed": 5.213981750188395
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 3
+    },
+    {
+      "workers": 8,
+      "jobs": 2000,
+      "seconds": 2.5446939999237657,
+      "jobs_per_second": 785.9491161058722,
+      "per_worker": [
+        {
+          "done": 249,
+          "elapsed": 2.531717791920528
+        },
+        {
+          "done": 250,
+          "elapsed": 2.5322444578632712
+        },
+        {
+          "done": 251,
+          "elapsed": 2.532380959019065
+        },
+        {
+          "done": 249,
+          "elapsed": 2.534173458116129
+        },
+        {
+          "done": 248,
+          "elapsed": 2.534599417122081
+        },
+        {
+          "done": 253,
+          "elapsed": 2.5410596248693764
+        },
+        {
+          "done": 249,
+          "elapsed": 2.541661750059575
+        },
+        {
+          "done": 251,
+          "elapsed": 2.54272050014697
+        }
+      ],
+      "succeeded": 2000,
+      "committed_effects": 2000,
+      "duplicate_committed_effects": 0,
+      "repeat": 3
+    }
+  ],
+  "crash": [
+    {
+      "phase": "after_claim",
+      "jobs": 50008,
+      "signal": "SIGKILL",
+      "reclaimed": 50008,
+      "recovery_seconds": 5.780669833999127,
+      "processing": {
+        "workers": 8,
+        "jobs": 50008,
+        "seconds": 5.450308042112738,
+        "jobs_per_second": 9175.2612170917,
+        "per_worker": [
+          {
+            "done": 6238,
+            "elapsed": 5.446231707930565
+          },
+          {
+            "done": 6275,
+            "elapsed": 5.446347999852151
+          },
+          {
+            "done": 6259,
+            "elapsed": 5.446396624902263
+          },
+          {
+            "done": 6245,
+            "elapsed": 5.44665175001137
+          },
+          {
+            "done": 6238,
+            "elapsed": 5.446777875069529
+          },
+          {
+            "done": 6240,
+            "elapsed": 5.4469182919710875
+          },
+          {
+            "done": 6261,
+            "elapsed": 5.447756417095661
+          },
+          {
+            "done": 6252,
+            "elapsed": 5.449911874951795
+          }
+        ]
+      },
+      "succeeded": 50008,
+      "committed_effects": 50008,
+      "duplicate_committed_effects": 0
+    },
+    {
+      "phase": "inside_effect",
+      "jobs": 1,
+      "signal": "SIGKILL",
+      "reclaimed": 1,
+      "recovery_seconds": 5.006661250023171,
+      "processing": {
+        "workers": 8,
+        "jobs": 1,
+        "seconds": 0.005586208077147603,
+        "jobs_per_second": 179.01230784632966,
+        "per_worker": [
+          {
+            "done": 0,
+            "elapsed": 0.0013937088660895824
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0015974589623510838
+          },
+          {
+            "done": 0,
+            "elapsed": 0.001490958034992218
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0017018751241266727
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0016855839639902115
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0023997498210519552
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0025362500455230474
+          },
+          {
+            "done": 1,
+            "elapsed": 0.005151708144694567
+          }
+        ]
+      },
+      "succeeded": 1,
+      "committed_effects": 1,
+      "duplicate_committed_effects": 0
+    },
+    {
+      "phase": "after_commit",
+      "jobs": 1,
+      "signal": "SIGKILL",
+      "reclaimed": 0,
+      "recovery_seconds": 0.0008466669823974371,
+      "processing": {
+        "workers": 8,
+        "jobs": 0,
+        "seconds": 0.0031266671139746904,
+        "jobs_per_second": 0.0,
+        "per_worker": [
+          {
+            "done": 0,
+            "elapsed": 0.0014027501456439495
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0014396251644939184
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0014192501548677683
+          },
+          {
+            "done": 0,
+            "elapsed": 0.001592207932844758
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0017774580046534538
+          },
+          {
+            "done": 0,
+            "elapsed": 0.002301792148500681
+          },
+          {
+            "done": 0,
+            "elapsed": 0.002354957861825824
+          },
+          {
+            "done": 0,
+            "elapsed": 0.0023900421801954508
+          }
+        ]
+      },
+      "succeeded": 1,
+      "committed_effects": 1,
+      "duplicate_committed_effects": 0
+    }
+  ],
+  "medians": {
+    "1": 98.39050313898485,
+    "2": 199.3918755569835,
+    "4": 387.9508573955325,
+    "8": 785.204868972465
+  },
+  "speedup": 7.98049449816612,
+  "throughput_targets_met": true,
+  "crash_targets_met": true,
+  "source_sha256": {
+    "forgequeue/__init__.py": "6b351577784bfc879419346ead2b8e4564a633f18d1a82870ecfee2d1a33a906",
+    "forgequeue/cli.py": "28684575ec031f6e044c1a721ec1c1284f6fde7bf4c47b055489271411befe97",
+    "forgequeue/queue.py": "7e7e41a2d6ecb9553f558680eb1aa974866b7dc55fe31c13eea5c17c6eb1e8c0",
+    "forgequeue/worker.py": "5276ab33fa91711017fb9b58d34764976eed1758d80f0e0584c8c305bd55a753",
+    "benchmarks/run.py": "e4aeae860aea45043d8c97b6f3a514cb95c4c8687fd1542759251187b9aab43a"
+  }
+}
